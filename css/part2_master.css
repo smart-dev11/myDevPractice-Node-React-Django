@@ -1,0 +1,25 @@
+/*myeongjun_17.12.29*/
+
+body{
+  /*background-color: gray;*/
+  background: url(https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg);
+  background-repeat: no-repeat;
+}
+
+div{
+  background-color: blue;
+  border-color: orange;
+  /*border-width: thin;*/
+  border-width: 10px;
+  /*border-style: dotted;*/
+  border-style: double;
+}
+
+p{
+  color:yellow;
+}
+
+span{
+  background: red;
+  color: black;
+}

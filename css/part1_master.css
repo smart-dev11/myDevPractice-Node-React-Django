@@ -1,0 +1,21 @@
+/* start css 17.12.28 */
+/*select tag{
+  property: value;
+}*/
+
+h1{
+  color: blue;
+}
+
+li{
+  /*you can find color at goole color picker*/
+  color: rgba(8, 84, 1);
+}
+
+p{
+  color: #0895a8;
+}
+
+h4{
+  color: rgba(255, 97, 0, 0.5);
+}
