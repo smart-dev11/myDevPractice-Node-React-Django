@@ -7,7 +7,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    create_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now())
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
@@ -15,15 +15,15 @@ class Post(models.Model):
         self.save()
 
     def approve_comments(self):
-        return self.comments.filter(approved_comments=True)
+        return self.comments.filter(approved_comment=True)
 
-    def get_absoulte_url(self):
+    def get_absolute_url(self):
         return reverse("post_detail", kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.title
 
-class Comment(model.Model):
+class Comment(models.Model):
     post = models.ForeignKey('blog.Post', related_name='comments')
     author = models.CharField(max_length=200)
     text = models.TextField()
@@ -34,7 +34,7 @@ class Comment(model.Model):
         self.approved_comment = True
         self.save()
 
-    def get_absoulte_url(self):
+    def get_absolute_url(self):
         return reverse('post_list')
 
     def __str__(self):
