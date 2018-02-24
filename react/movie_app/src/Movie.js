@@ -1,36 +1,99 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import LinesEllipsis from 'react-lines-ellipsis'
 import './Movie.css';
 
-class Movie extends Component{
+// class Movie extends Component{
+//
+//   static propTypes = {
+//     title: PropTypes.string.isRequired,
+//     poster: PropTypes.string
+//   }
+//
+//   render(){
+//     console.log(this.props);
+//     return(
+//         <div>
+//           <MoviePoster poster={this.props.poster}/>
+//           <h1>{this.props.title}</h1>
+//         </div>
+//     )
+//   }
+// }
 
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    poster: PropTypes.string
-  }
+function Movie({title, poster, genres, synopsis}){
+  return(
+    <div className="Movie">
 
-  render(){
-    console.log(this.props);
-    return(
-        <div>
-          <MoviePoster poster={this.props.poster}/>
-          <h1>{this.props.title}</h1>
+      <div className="Movie__Column">
+        <MoviePoster poster={poster} alt={title}/>
+      </div>
+
+      <div className="Movie__Column">
+        <h1>{title}</h1>
+
+        <div className="Movie__Genres">
+          {genres.map((genre, index) => <MovieGenre genre={genre} key={index} /> )}
         </div>
-    )
-  }
+
+        <div className="Movie__Synopsis">
+          <LinesEllipsis
+            text={synopsis}
+            maxLine='3'
+            ellipsis='...'
+            trimRight
+            basedOn='letters'
+          />
+
+        </div>
+      </div>
+    </div>
+  )
 }
 
-class MoviePoster extends Component{
 
-  static propTypes = {
-    poster: PropTypes.string.isRequired
-  }
-
-  render(){
-    return(
-      <img src={this.props.poster}/>
-    )
-  }
+Movie.propTypes = {
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  geners: PropTypes.array.isRequired,
+  synopsis: PropTypes.string.isRequired
 }
+
+// class MoviePoster extends Component{
+//
+//   static propTypes = {
+//     poster: PropTypes.string.isRequired
+//   }
+//
+//   render(){
+//     return(
+//       <img src={this.props.poster} alt="Movie Poster"/>
+//     )
+//   }
+// }
+
+//stateless component,
+//no life cycle, no state, just return
+function MoviePoster({poster, alt}){
+  return(
+    <img src={poster} alt={alt} className="Movie__Poster"/>
+  )
+}
+
+MoviePoster.propTypes = {
+  poster:PropTypes.string.isRequired,
+  alt:PropTypes.string.isRequired
+}
+
+function MovieGenre({genre}){
+  return(
+    <span className="Movie__Genre">{genre}</span>
+  )
+}
+
+MovieGenre.propTypes = {
+  genre: PropTypes.string.isRequired
+}
+
 
 export default Movie

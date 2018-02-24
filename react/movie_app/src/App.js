@@ -12,43 +12,50 @@ class App extends Component {
   }
 
   componentDidMount(){
-    setTimeout(() => {
-      this.setState({
-        movies: [
-          {
-            title:"Matrix",
-            poster:"https://upload.wikimedia.org/wikipedia/en/9/9a/The_Matrix_soundtrack_cover.jpg"
-          },
-          {
-            title:"Full Metal Jacket",
-            poster:"http://image.cine21.com/cine21/poster/2005/0607/M0010102_.jpg"
-          },
-          {
-            title:"lord of the rings",
-            poster:"http://ticketimage.interpark.com/Movie/still_image/V16/V1602287p_s01.gif"
-          },
-          {
-            title:"Star wars",
-            poster:"http://t1.daumcdn.net/movie/469c5c4957bee98cabe85e04e630f174dc0b7670"
-          }
-        ]
-      })
-    },3000) //after 3 sec, show you new movies
+    this._getMovies();
   }
   // When It's update, render work again automatically
 
   _renderMovies = () => {
-    const movies = this.state.movies.map((movie, index) =>{
-      return <Movie title={movie.title} poster={movie.poster} key={index} />
+    //const movies = this.state.movies.map((movie, index) =>{
+    const movies = this.state.movies.map(movie =>{
+      //console.log(movie) //check movie factor
+      return <Movie
+        title={movie.title_english}
+        poster={movie.medium_cover_image}
+        key={movie.id}
+        genres={movie.genres}
+        synopsis={movie.synopsis}
+        />
     })
 
     return movies
-
   }
+
+  _getMovies = async () => {
+    const movies = await this._callApi()
+                   //await mean is that wait! when callApi finish
+    this.setState({
+      movies
+    })
+  }
+
+  _callApi = () => {
+    //fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
+    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
+    // work is done so go to the then.
+    //.then(response => console.log(response))  //check use the response
+    .then(potato => potato.json())              //change to json
+    //.then(json => console.log(json))            //see the data to console
+    .then(json => json.data.movies)
+    .catch(err => console.log(err))
+  }
+
   render() {
+    const { movies } = this.state;
     return (
-      <div className="App">
-        {this.state.movies ? this._renderMovies() : 'Loading'}
+      <div className={movies ? "App": "App--loading"}>
+        {movies ? this._renderMovies() : 'Loading'}
       </div>
     );
   }
