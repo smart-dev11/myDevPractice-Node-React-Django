@@ -23,32 +23,67 @@ import PropTypes from "prop-types";
 //   }
 // }
 
-// const weatherCases = {
-//   Rain: {
-//     colors:[]
-//   }
-// }
+const weatherCases = {
+  Rain: {
+    colors: ["#00C6FB","#005BEA"],
+    title: "Raing like a T.T",
+    subtitle: "For more info look ouside",
+    icon: 'ios-rainy'
+  },
+  Clear:{
+    colors: ["#FEF253","#FF7300"],
+    title: "Sunny is good",
+    subtitle: "Go to a coffe shop",
+    icon: 'ios-sunny'
+  },
+  Thunderstrom:{
+    colors: ["#00ECBC","#007ADF"],
+    title: "Thunder is scare",
+    subtitle: "Actually, outside of the house",
+    icon: 'ios-thunderstrom'
+  },
+  Clouds:{
+    colors: ["#0702CC","#304352"],
+    title: "Clouds",
+    subtitle: "I know, It's good day to read a book",
+    icon: 'ios-cloudy'
+  },
+  Snow:{
+    colors: ["#7DE2FC","#8986E5"],
+    title: "So cold",
+    subtitle: "Do you want to bulid a snowman?",
+    icon: 'ios-snow'
+  },
+  Drizzle:{
+    colors: ["#89F7FE","#66A6FF"],
+    title: "Drizzle",
+    subtitle: "Is like rain",
+    icon: 'ios-rainy-outline'
+  }
+}
 
-function Weather( temp ){
+function Weather( {weatherName, temp} ){
+  console.log(weatherName);
   return(
-    <LinearGradient colors={["#00C6FB","#005BEA"]}
+    <LinearGradient colors={weatherCases[weatherName].colors}
                     style={styles.container}
     >
       <View style={styles.upper}>
-        <Ionicons color="white" size={144} name="ios-rainy"/>
+        <Ionicons color="white" size={144} name={weatherCases[weatherName].icon}/>
         <Text style={styles.temp}>{temp}°</Text>
       </View>
       <View style={styles.lower}>
-        <Text style={styles.title}>Raining like a T.T</Text>
-        <Text style={styles.subtitle}>For more info look ouside</Text>
+        <Text style={styles.title}>{weatherCases[weatherName].title}</Text>
+        <Text style={styles.subtitle}>{weatherCases[weatherName].subtitle}</Text>
       </View>
     </LinearGradient>
   );
 }
 
 Weather.propTypes = {
-  temp: PropTypes.number.isRequired
-}
+  temp: PropTypes.number.isRequired,
+  weatherName: PropTypes.string.isRequired
+};
 
 export default Weather;
 
