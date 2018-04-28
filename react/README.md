@@ -30,3 +30,9 @@ yarn add prop-types
 yarn cache clean
 yarn
 ```
+
+### install redux
+```
+npm install redux react-redux --save
+
+```
