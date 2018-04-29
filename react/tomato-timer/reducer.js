@@ -31,7 +31,7 @@ function addSecond(){
 const TIMER_DURATION = 1500;
 
 const initialState = {
-  isPlaying: false.
+  isPlaying: false,
   elapsedTime: 0,
   timerDuration: TIMER_DURATION
 }
@@ -46,6 +46,10 @@ function reducer(state = initialState, action){
 
     case ADD_SECOND:
       return applyAddSecond(state);
+
+    default:
+      return state;
+
   }
 }
 
