@@ -1,13 +1,11 @@
 //Import
 
 //Actions
-
 const START_TIMER = 'START_TIMER';
 const RESTART_TIMER = 'RESTART_TIMER';
 const ADD_SECOND = 'ADD_SECOND';
 
 //Action creators
-
 function startTimer(){
   return {
     type: START_TIMER
@@ -27,7 +25,6 @@ function addSecond(){
 }
 
 //Reducer
-
 const TIMER_DURATION = 1500;
 
 const initialState = {
@@ -91,4 +88,5 @@ const actionCreators = {
 }
 
 // Export Reducer
+export { actionCreators };
 export default reducer;

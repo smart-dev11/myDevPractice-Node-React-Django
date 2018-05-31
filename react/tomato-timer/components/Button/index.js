@@ -13,7 +13,7 @@ function Button({iconName, onPress}){
 
 Button.propTypes = {
   iconName: PropTypes.string.isRequired,
-  oppress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired
 }
 
 export default Button;
