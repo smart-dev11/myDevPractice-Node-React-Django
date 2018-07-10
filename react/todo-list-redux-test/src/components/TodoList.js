@@ -1,9 +1,9 @@
-import React, { Component } form 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Todo from './Todo'
+import Todo from './Todo';
 
-class Todo from './Todo';
+
 class TodoList extends Component {
   render() {
     return (

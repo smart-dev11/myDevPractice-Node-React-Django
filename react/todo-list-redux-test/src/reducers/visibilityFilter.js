@@ -6,6 +6,8 @@ export const visibilityFilter = (state='SHOW_ALL', action) => {
 
   } else {
     return state;
-    
+
   }
 }
+
+export default visibilityFilter;

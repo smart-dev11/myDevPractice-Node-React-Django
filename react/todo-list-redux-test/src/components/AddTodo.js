@@ -1,5 +1,5 @@
-import React, { component } from 'react';
-import PropTypes from 'porp-types';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
 class AddTodo extends Component {
@@ -7,7 +7,7 @@ class AddTodo extends Component {
     return (
       <div>
         <input type='text' ref='input' />
-        <button onClick={e=>this.handleClick(e)}
+        <button onClick={e=>this.handleClick(e)}>
           Add
         </button>
       </div>
