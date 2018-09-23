@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Weather from "./Weather";
 
 //openweathermap.org
-const API_KEY = "";
+const API_KEY = "81d6b2ddf02d79827ded76c769edc06b";
 
 export default class App extends React.Component {
   state = {
