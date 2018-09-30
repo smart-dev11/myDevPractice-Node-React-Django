@@ -1,0 +1,85 @@
+/* matches 
+li:matches(:nth-child(even), .target){
+    background-color: blue;
+} */
+
+
+/* not
+li:not(.target){
+    background-color: blue;
+} */
+
+
+/* You can use like a variables about particular item
+:root {
+    --awesomeColor: #2980b9;
+    --awesomeBorder: 1px solid red;
+}
+
+li:first-child a{
+    font-size: 30px;
+    color: var(--awesomeColor);
+    border: var(--awesomeBorder);
+}
+*/
+
+
+/* @custom-selector
+@custom-selector :--headers h1, h2, h3, h4, h5, h6;
+
+:--headers {
+    color: #8e44ad;
+} */
+
+
+/* @custom-media
+@custom-media --ipad-size (max-width: 850px);
+
+@media (--ipad-size) {
+    body {
+        background-color: red;
+    }
+} */
+
+
+/* media query ranges
+@custom-media --ipad-size (800px <= width < 850px);
+
+@media (--ipad-size) {
+    body {
+        background-color: red;
+    }
+} */
+
+
+/* h1 {
+    color: #f1c40f;
+}
+
+h1:hover {
+    color: color-mod(#f1c40f lightness(80%));
+} */
+
+/* h1 {
+    color: gray(50%);
+} */
+
+
+/* nesting */
+main {
+    background-color: blue
+}
+main section {
+        background-color: red;
+        width: 500px
+    }
+main section li {
+            background-color: yellow;
+            width: 400px
+        }
+main section li a {
+                color: black
+            }
+main section li a:hover {
+                    font-size: 30px;
+                }
