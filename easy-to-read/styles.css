@@ -1,0 +1,70 @@
+:root {
+    --borderRadius: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #fafafc;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 0px 15px;
+}
+
+.header .header__title {
+    margin-bottom: 5px;
+    font-size: 45px;
+}
+
+.header .header__subtitle {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid .grid__main-item {
+    grid-column: span 2;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(https://d265059lu1u7jc.cloudfront.net/site/uploads/2018/03/HeaderImageB.jpg);
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    padding: 20px 10px;
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.grid-item .grid-item__title {
+    font-weight: 800;
+    font-size: 16px;
+}
+  
+.grid-item .grid-item__photo {
+    max-width: 100%;
+    border-radius: var(--borderRadius);
+    margin-bottom: 10px;
+}
+  
+.grid-item .grid-item__subtitle {
+    color: rgba(0, 0, 0, 0.6);
+}
