@@ -55,3 +55,78 @@ body {
     margin-left: 15px;
 }
 
+.header__icon span {
+    margin-left: 15px;
+}
+
+.header__icon span:first-child {
+    margin-left: 0;
+}
+
+.main {
+    padding: 0px 20px;
+}
+
+.main .main__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    border-bottom: 0.5px solid var(--greyColor);
+    margin-bottom: 50px;
+}
+
+.main__header .main__list-title {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.main__header .main__list-subtitle {
+    margin-left: 30px;
+    color: var(--greyColor);
+    text-transform: uppercase;
+}
+
+.match-item img {
+    max-width: 70px;
+    box-shadow: var(--boxShadow);
+}
+
+.main__header svg,
+.match-item svg {
+    fill: var(--greyColor);
+}
+
+.main .match-list {
+    list-style: line;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 30px;
+}
+
+.match-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 30px;
+}
+
+.match-item__info {
+    font-weight: 600;
+}
+
+.match-item__info .match-item__name {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.match-item__info .match-item__friends {
+    text-transform: uppercase;
+    color: var(--greyColor);
+}
+
+.match-item .match-item__icon {
+    align-self: center;
+}
