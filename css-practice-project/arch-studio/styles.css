@@ -56,3 +56,57 @@ body {
 
     align-self: center;
 }
+
+.portfoilo::-webkit-scrollbar {
+    display: none;
+}
+
+.portfoilo .portfoilo__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url(https://timedotcom.files.wordpress.com/2016/04/starbucks.jpeg);
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 38px rgba(0, 0, 0, 0.22);
+}
+
+.portfoilo__item .item__info {
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    padding: 30p 0px;
+}
+
+.navigation {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation svg {
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+.navigation .navigation__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
+    grid-auto-columns: repeat(auto-fill, minmax(min-content, 1fr));
+    grid-auto-flow: column;
+    grid-gap: 20px;
+}
+
+.navigation__icons .navigation__icon:last-child {
+    margin-left: 10px;
+}
+
+.navigation .navigation__item--selected {
+    color: #2c2c2c;
+}
